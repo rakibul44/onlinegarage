@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,8 +8,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Mechanics List</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mechanics List</a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Rakibul</a></li>
+            <li><a class="dropdown-item" href="#">Ahsan</a></li>
+            <li><a class="dropdown-item" href="#">Wasifat</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -19,8 +24,8 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Car Parts</a></li>
             <li><a class="dropdown-item" href="#">Bick Parts</a></li>
-            <li><hr class="dropdown-divider">Track & Bus Parts</li>
-            <li><a class="dropdown-item" href="#"></a></li>
+            <li><a class="dropdown-item" href="#">Track & Bus Parts</a></li>
+            <li><a class="dropdown-item" href="#">Cycle Parts</a> </li>
           </ul>
         </li>
         <!-- <li class="nav-item">
