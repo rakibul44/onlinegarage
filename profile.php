@@ -1,10 +1,19 @@
+<?php
+    session_start();
+    include_once('config/config.php');
+    if(isset($_SESSION['id'])) {
+        $user_id = $_SESSION['id'];
+        $sql = "SELECT * FROM users WHERE id='$user_id'";
+        $result = mysqli_query($conn, $sql);
+        $profile = mysqli_fetch_assoc($result);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo($profile['name']); ?> - Profile</title>
     <?php require_once('layouts/header.php'); ?>
 </head>
 <body>
@@ -13,14 +22,14 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="assets/images/avatar.jpg" class="img-fluid rounded-start" alt="...">
+                    <img src="assets/images/avatar.jpg" style="padding: 10px;" class="img-fluid rounded-start" alt="...">
                 </div>
             
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">Rakibul Ahsan</h5>
-                        <p class="card-text"> Hello I'm rakibul ahsan, full stack web developer! </p>
-                        <p class="card-text">Joined <small class="text-muted">2 January 2022 08:40 PM</small></p>
+                        <h5 class="card-title"> <?php echo($profile['name']); ?> </h5>
+                        <p class="card-text"> Hello <?php echo($profile['name']); ?>, you have orderd total 30 times and paid 4041 BDT </p>
+                        <p class="card-text">Joined <small class="text-muted"> <?php echo($profile['date']); ?> </small></p>
                     </div>
                 </div>
             </div>
@@ -59,3 +68,10 @@
     <?php require_once('layouts/footer.php');?>
 </body>
 </html>
+
+<?php
+    }else {
+        header('Location: index.php');
+        exit();
+    }
+?>

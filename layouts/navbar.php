@@ -18,8 +18,15 @@
         </form>
 
         <div class="text-end">
-          <a class="btn btn-outline-light me-2" href="login.php">Login</a>
-          <a class="btn btn-warning" href="singup.php">Sign-up</a>
+          <?php
+            if(isset($_SESSION['id'])){
+              echo('<a class="btn btn-outline-light me-2" href="profile.php">Profile</a>');
+              echo('<a class="btn btn-warning" href="inc/api.php?logout=true">Logout</a>');
+            }else{
+              echo('<a class="btn btn-outline-light me-2" href="login.php">Login</a>');
+              echo('<a class="btn btn-warning" href="singup.php">Sign-up</a>');
+            }
+          ?>
         </div>
       </div>
     </div>
