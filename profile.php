@@ -51,15 +51,15 @@
             <tbody>
                 <tr>
                     <th scope="row">1354</th>
-                    <td>Abid Hasan</td>
+                    <td>Hasan Khan</td>
                     <td>100 feet</td>
                     <td>
                         <span class="badge bg-success">Completed</span>
                     </td>
                     <td>1 January 2022, 3:10PM</td>
                     <td>
-                        <button class="btn btn-sm btn-outline-info">VIEW</button>
-                        <button class="btn btn-sm btn-outline-info">RECALL</button>
+                        <button class="btn btn-sm btn-outline-info" style="font-color:#000">VIEW</button>
+                        <button class="btn btn-sm btn-outline-info" style="font-color:#000">RECALL</button>
                     </td>
                 </tr>
             </tbody>
