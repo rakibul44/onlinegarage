@@ -14,18 +14,14 @@
 <body>
     <!-- navbar-start -->
     <?php require_once('layouts/navbar.php');?>
-    <!-- navbar-end -->
-      
+    
+    <!-- banner-area -->
     <?php require_once('layouts/banner.php');?>
 
-    <!-- content-text -->
-    <div class="container">
-        <div class="content" style="text-align: center; margin-top:30px">
-            <h2>Introducing you to the Online Garage</h2>
-            <h5>A one-stop solution for your journey</h5>
-        </div>
-    </div>
-    <!-- footer-area-start -->
+    <!-- card-area -->
+    <?php require_once('layouts/card.php');?>
+    
+    <!-- footer-area -->
     <?php require_once('layouts/footer.php');?>
 </body>
 </html>

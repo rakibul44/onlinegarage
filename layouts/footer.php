@@ -5,10 +5,9 @@
         <h5>Section</h5>
         <ul class="nav flex-column">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Shop</a></li>
+          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mechanics List</a></li>
+          <li class="nav-item mb-2"><a href="contact.php" class="nav-link p-0 text-muted">Support</a></li>
         </ul>
       </div>
 
@@ -20,7 +19,7 @@
           <div class="d-flex w-100 gap-2">
             <label for="newsletter1" class="visually-hidden">Email address</label>
             <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-            <button class="btn btn-primary" type="button">Subscribe</button>
+            <button class="btn btn-warning" type="button">Subscribe</button>
           </div>
         </form>
       </div>
