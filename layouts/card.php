@@ -27,7 +27,7 @@
             <div class="card" style="align-items: center; padding:20px">
             <img src="assets/images/technical-support.png" class="card-img-top" alt="..." style="width: 200px;">
             <div class="card-body">
-                <a href="contact.php" class="btn btn-warning">Support</a>
+                <a href="contact.php" class="btn btn-warning">Contact</a>
             </div>
         </div>
     </div>
