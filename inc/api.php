@@ -94,6 +94,23 @@ if(isset($_POST['create_account'])){
     session_destroy();
     header("Location: ../index.php");
     exit();
+}else if(isset($_POST['submit_contact'])){
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $subject = mysqli_real_escape_string($conn, $_POST['subject']);
+    $message = mysqli_real_escape_string($conn, $_POST['message']);
+
+    if(empty($name) || empty($email) || empty($subject) || empty($message)){
+        header('Location: ../contact.php?error=All Fields Are Required');
+        exit();
+    }else{
+        $sql = "INSERT INTO `contact` (`name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message')";
+        if(mysqli_query($conn, $sql)){
+            header('Location: ../contact.php?success=Message Sent');
+        }else{
+            header('Location: ../contact.php?error=Database Service Error');
+        }
+    }
 }else{
     header("Location: ../index.php");
 }
