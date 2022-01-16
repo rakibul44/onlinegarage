@@ -43,7 +43,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Mechanic Name</th>
                     <th scope="col">Location</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Rating</th>
                     <th scope="col">Date</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -54,12 +54,12 @@
                     <td>Hasan Khan</td>
                     <td>100 feet</td>
                     <td>
-                        <span class="badge bg-success">Completed</span>
+                        <span class="badge bg-success">4.5</span>
                     </td>
                     <td>1 January 2022, 3:10PM</td>
                     <td>
-                        <button class="btn btn-sm btn-outline-info" style="font-color:#000">VIEW</button>
-                        <button class="btn btn-sm btn-outline-info" style="font-color:#000">RECALL</button>
+                        <button class="btn btn-sm btn-outline-info">VIEW</button>
+                        <button class="btn btn-sm btn-outline-info">RECALL</button>
                     </td>
                 </tr>
             </tbody>
