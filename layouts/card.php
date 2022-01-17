@@ -19,7 +19,7 @@
             <div class="card" style="align-items: center; padding:20px">
             <img src="assets/images/shop.png" class="card-img-top" alt="..." style="width: 200px;">
             <div class="card-body">
-                <a href="shop.php" class="btn btn-warning">Shop</a>
+                <a href="404.php" class="btn btn-warning">Shop</a>
             </div>
         </div>
     </div>

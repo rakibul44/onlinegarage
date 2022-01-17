@@ -27,7 +27,6 @@
                     </div>
                     <div class="w3-container">
                         <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <span class="mt-2" style="font-size: 12px;font-weight: bold;">Hello, I'm John Doe.I'll really thankfull to help you.</span>
                         <div class="rate">
                             <span class="badge bg-success"><span>Rating</span> 4.5</span>
                         </div>
@@ -42,7 +41,6 @@
                     </div>
                     <div class="w3-container">
                         <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <span class="mt-2" style="font-size: 12px;font-weight: bold;">Hello, I'm John Doe.I'll really thankfull to help you.</span>
                         <div class="rate">
                             <span class="badge bg-success"><span>Rating</span> 4.5</span>
                         </div>
@@ -57,7 +55,6 @@
                     </div>
                     <div class="w3-container">
                         <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <span class="mt-2" style="font-size: 12px;font-weight: bold;">Hello, I'm John Doe.I'll really thankfull to help you.</span>
                         <div class="rate">
                             <span class="badge bg-success"><span>Rating</span> 4.5</span>
                         </div>
@@ -72,7 +69,6 @@
                     </div>
                     <div class="w3-container">
                         <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <span class="mt-2" style="font-size: 12px;font-weight: bold;">Hello, I'm John Doe.I'll really thankfull to help you.</span>
                         <div class="rate">
                             <span class="badge bg-success"><span>Rating</span> 4.5</span>
                         </div>
@@ -87,7 +83,6 @@
                     </div>
                     <div class="w3-container">
                         <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <span class="mt-2" style="font-size: 12px;font-weight: bold;">Hello, I'm John Doe.I'll really thankfull to help you.</span>
                         <div class="rate">
                             <span class="badge bg-success"><span>Rating</span> 4.5</span>
                         </div>
@@ -102,7 +97,6 @@
                     </div>
                     <div class="w3-container">
                         <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <span class="mt-2" style="font-size: 12px;font-weight: bold;">Hello, I'm John Doe.I'll really thankfull to help you.</span>
                         <div class="rate">
                             <span class="badge bg-success"><span>Rating</span> 4.5</span>
                         </div>

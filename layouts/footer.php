@@ -4,10 +4,10 @@
       <div class="col-2">
         <h5>Section</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Shop</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Mechanics List</a></li>
-          <li class="nav-item mb-2"><a href="contact.php" class="nav-link p-0 text-muted">Support</a></li>
+          <li class="nav-item mb-2"><a href="index.php" class="nav-link p-0 text-muted">Home</a></li>
+          <li class="nav-item mb-2"><a href="404.php" class="nav-link p-0 text-muted">Shop</a></li>
+          <li class="nav-item mb-2"><a href="mechanics.php" class="nav-link p-0 text-muted">Mechanics List</a></li>
+          <li class="nav-item mb-2"><a href="contact.php" class="nav-link p-0 text-muted">Contact</a></li>
         </ul>
       </div>
 
