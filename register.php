@@ -71,7 +71,7 @@ a {
  <!-- navbar-start -->
  <?php require_once('layouts/navbar.php');?>
 
-<form action="/action_page.php">
+<form action="inc/api.php" method="POST">
   <div class="container">
     <h1>Register</h1>
     <p>Please fill in this form to create an account.</p>
@@ -84,32 +84,35 @@ a {
 
     <div class="form-outline mb-4">
     <label class="form-label" for="form3Example3cg"> <b>Your Email</b> </label>
-    <input type="email" id="form3Example3cg" class="form-control form-control-lg" required>
+    <input type="email" id="form3Example3cg" name="email" class="form-control form-control-lg" required>
     </div>
 
     <div class="form-outline datepicker w-100">
     <label for="birthdayDate" class="form-label"> <b>Birthday</b> </label>
-    <input type="date" class="form-control form-control-lg" id="birthdayDate"/>
+    <input type="date" name="birthdate" class="form-control form-control-lg" id="birthdayDate"/>
     </div>
 
     <label for="message"> <b>Work skills</b> </label>
-    <textarea id="message" name="message" placeholder="Write about your work skills..." style="height:200px" required></textarea>
+    <textarea id="message" name="skills" placeholder="Write about your work skills..." style="height:200px" required></textarea>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+    <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+
+    <label for="postcode"><b>Post Code</b></label>
+    <input type="number" placeholder="1200" name="postcode" id="postcode" required>
 
     <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <p><b>Please upload your photo</b></p>
+    <input type="password" placeholder="Repeat Password" name="password-repeat" id="psw-repeat" required>
+    <!-- <p><b>Please upload your photo</b></p>
 
     <div class="input-group mb-3">
       <label class="input-group-text" for="inputGroupFile01"> <b>Upload</b> </label>
       <input type="file" class="form-control" id="inputGroupFile01" required>
     </div>
-    <div class="small text-muted mt-2">Upload your photo . Max file size 5 MB</div>
+    <div class="small text-muted mt-2">Upload your photo . Max file size 5 MB</div> -->
     <hr>
     <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
+    <button type="submit" name="apply_as_mechanic" class="registerbtn">Register</button>
   </div>
   <div class="container signin">
     <p>Already have an account? <a href="login.php">Log-in</a>.</p>

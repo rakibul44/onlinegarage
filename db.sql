@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2022 at 05:18 AM
+-- Generation Time: Jan 20, 2022 at 08:04 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -60,13 +60,35 @@ CREATE TABLE `customer` (
 CREATE TABLE `mechanic` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `garage_id` int(5) NOT NULL,
   `adress` varchar(200) NOT NULL,
   `nid` varchar(50) NOT NULL,
   `skills` varchar(200) NOT NULL,
   `experience` varchar(500) NOT NULL,
   `certification` varchar(200) NOT NULL,
-  `update_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `update_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `post_code` int(5) NOT NULL,
+  `rating` float NOT NULL,
+  `birth_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mechanic_requests`
+--
+
+CREATE TABLE `mechanic_requests` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `borth_date` date DEFAULT NULL,
+  `skill` varchar(500) NOT NULL,
+  `password` varchar(200) NOT NULL,
+  `image` varchar(200) NOT NULL,
+  `post_code` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -106,6 +128,12 @@ ALTER TABLE `mechanic`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `mechanic_requests`
+--
+ALTER TABLE `mechanic_requests`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -131,6 +159,12 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT for table `mechanic`
 --
 ALTER TABLE `mechanic`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `mechanic_requests`
+--
+ALTER TABLE `mechanic_requests`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --

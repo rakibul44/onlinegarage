@@ -111,6 +111,28 @@ if(isset($_POST['create_account'])){
             header('Location: ../contact.php?error=Database Service Error');
         }
     }
+}else if(isset($_POST['apply_as_mechanic'])){
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $birth_date = mysqli_real_escape_string($conn, $_POST['birthdate']);
+    $skill = mysqli_real_escape_string($conn, $_POST['skills']);
+    $post_code = mysqli_real_escape_string($conn, $_POST['postcode']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+    if(empty($name) || empty($phone) || empty($skill) || empty($post_code) || empty($password)){
+        header("Location: ../register.php?error=All Fields Required");
+        exit();
+    }else{
+        $hasedPwd = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO `mechanic_requests` (`name`, `phone`, `email`, `borth_date`, `skill`, `password`, `post_code`) VALUES ('$name', '$phone', '$email', '$birth_date', '$skill', '$hasedPwd', '$post_code');";
+        if(mysqli_query($conn, $sql)){
+            header("Location: ../index.php?success=Form Submitted");
+        }else{
+            header("Location: ../register.php?error=DB Error");
+        }
+    }
 }else{
     header("Location: ../index.php");
+    exit();
 }
