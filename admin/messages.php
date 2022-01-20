@@ -13,7 +13,6 @@
     <meta name="generator" content="Hugo 0.88.1">
     <title>Online Garage</title>
     
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Favicons -->
     
@@ -39,35 +38,6 @@
         font-size: 3.5rem;
       }
     }
-
-    .counter {
-    background-color:#f5f5f5;
-    padding: 20px 0;
-    border-radius: 5px;
-}
-
-.count-title {
-    font-size: 40px;
-    font-weight: normal;
-    margin-top: 10px;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.count-text {
-    font-size: 13px;
-    font-weight: normal;
-    margin-top: 10px;
-    margin-bottom: 0;
-    text-align: center;
-}
-
-.fa-2x {
-    margin: 0 auto;
-    float: none;
-    display: table;
-    color: #4ad1e5;
-}
     </style>
     
     <!-- Custom styles for this template -->
@@ -79,90 +49,55 @@
   <div class="container-fluid">
     <div class="row">
       <?php include_once('layouts/sidebar.php'); ?>
+
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Contact Messages</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
-          <div class="btn-group me-2">
+          <!-- <div class="btn-group me-2">
             <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
             <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
-          </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          </div> -->
+          <!-- <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span data-feather="calendar"></span>
             This week
-          </button>
+          </button> -->
         </div>
       </div>
 
-
-		<!-- counter area start -->
-      <div class="container mb-4">
-    <div class="row">
-    </div>
-    <div class="row text-center">
-        <div class="col">
-          <div class="counter">
-              <h2 class="timer count-title count-number"> 500</h2>
-              <p class="count-text ">Service Taken</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="counter">
-          <?php
-            $sql = "SELECT * FROM users";
-            $result = mysqli_query($conn, $sql);
-            $userCount = mysqli_num_rows($result);
-            ?>
-              <h2 class="timer count-title count-number"><?php echo($userCount); ?></h2>
-              <p class="count-text ">Users</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="counter">
-          <?php
-            $sql = "SELECT * FROM mechanic";
-            $result = mysqli_query($conn, $sql);
-            $mechanicCount = mysqli_num_rows($result);
-            ?>
-              <h2 class="timer count-title count-number"><?php echo($mechanicCount); ?></h2>
-              <p class="count-text ">Mechanics</p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="counter">
-          <?php
-            $sql = "SELECT * FROM contact";
-            $result = mysqli_query($conn, $sql);
-            $messageCount = mysqli_num_rows($result);
-            ?>
-              <h2 class="timer count-title count-number"><?php echo($messageCount); ?></h2>
-              <p class="count-text">Message Submitted</p>
-          </div>
-        </div>
-    </div>
-  </div>
-
-<!-- counter area end -->
-
-      <div class="table-responsive mt-4">
+      <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
+            <?php
+              $sql = "SELECT * FROM `contact` ORDER BY `date` DESC LIMIT 50";
+              $result = mysqli_query($conn, $sql);
+              while ($row = mysqli_fetch_array($result)): 
+              ?>
             <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
+              <td> <?php echo($row['id']); ?> </td>
+              <td> <?php echo($row['name']); ?> </td>
+              <td> <?php echo($row['email']); ?> </td>
+              <td> <?php echo($row['subject']); ?> </td>
+              <td>
+                <button class="btn btn-sm btn-outline-info" style="margin-right: 5px;">VIEW</button>
+                <button class="btn btn-sm btn-outline-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+  <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+  <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+</svg>
+                </button>
+              </td>
             </tr>
+            <?php endwhile; ?>
           </tbody>
         </table>
       </div>
@@ -173,6 +108,7 @@
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+
 </body>
 </html>
 <?php
