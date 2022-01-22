@@ -100,7 +100,7 @@ a {
 
     <label for="postcode"><b>Post Code</b></label>
     <input type="number" placeholder="1200" name="postcode" id="postcode" required>
-
+    <br> <br>
     <label for="psw-repeat"><b>Repeat Password</b></label>
     <input type="password" placeholder="Repeat Password" name="password-repeat" id="psw-repeat" required>
     <!-- <p><b>Please upload your photo</b></p>

@@ -7,8 +7,9 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.php" class="nav-link px-2 text-white">Home</a></li>
-          <!-- <li><a href="404.php" class="nav-link px-2 text-white">Shop</a></li>  -->
+          <li><a href="shop.php" class="nav-link px-2 text-white">Shop</a></li> 
           <li><a href="mechanics.php" class="nav-link px-2 text-white">Mechanics List</a></li>
+          <li><a href="register.php" class="nav-link px-2 text-white">Mechanic Register</a></li>
           <li><a href="contact.php" class="nav-link px-2 text-white">Contact</a></li>
         </ul>
 
