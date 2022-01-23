@@ -132,7 +132,26 @@ if(isset($_POST['create_account'])){
             header("Location: ../register.php?error=DB Error");
         }
     }
-}else{
+}else if(isset($_POST['order_button'])){
+    $user_id = mysqli_real_escape_string($conn, $_POST['user_id']);
+    $mechanic_id = mysqli_real_escape_string($conn, $_POST["mechanic_id"]);
+    $latitude = mysqli_real_escape_string($conn, $_POST['latitude']);
+    $longitude = mysqli_real_escape_string($conn, $_POST['longitude']);
+    $location = mysqli_real_escape_string($conn, $_POST['location']);
+
+    if(empty($user_id) || empty($latitude) || empty($longitude) || empty($location)){
+        header("Location: ../index.php?mechanics.php?error=All Fields Required");
+        exit();
+    }else{
+        $sql = "INSERT INTO `orders` (`user_id`, `mechanic_id`, `c_latitude`, `c_longitude`, `address`, `status`) VALUES ('$user_id', '$mechanic_id', '$latitude', '$longitude', '$location', 'pending')";
+        if(mysqli_query($conn, $sql)){
+            header("Location: ../profile.php");
+        }else{
+            header("Location: ../index.php?mechanics.php?error=Something Error");
+            exit();
+        }
+    }
+} else{
     header("Location: ../index.php");
     exit();
 }

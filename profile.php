@@ -41,7 +41,6 @@
             <thead>
                 <tr>
                     <th scope="col">ID</th>
-                    <th scope="col">Mechanic Name</th>
                     <th scope="col">Location</th>
                     <th scope="col">Rating</th>
                     <th scope="col">Date</th>
@@ -49,19 +48,26 @@
                 </tr>
             </thead>
             <tbody>
+            <?php
+//            JOIN QUERY ORDER WITH MECHANIC TABLE
+            $order_sql = "SELECT * FROM mechanic INNER JOIN orders ON orders.mechanic_id = mechanic.user_id WHERE orders.user_id = $user_id";
+            $result = mysqli_query($conn, $order_sql);
+            while ($row = mysqli_fetch_array($result)):
+            ?>
                 <tr>
-                    <th scope="row">1354</th>
-                    <td>Hasan Khan</td>
-                    <td>100 feet</td>
+                    <th scope="row"><?php echo($row['id']); ?> </th>
+
+                    <td><?php echo($row['address']); ?></td>
                     <td>
                         <span class="badge bg-success">4.5</span>
                     </td>
-                    <td>1 January 2022, 3:10PM</td>
+                    <td> <?php echo($row['date']); ?> </td>
                     <td>
-                        <button class="btn btn-sm btn-outline-info">VIEW</button>
-                        <button class="btn btn-sm btn-outline-info">RECALL</button>
+<!--                        <button class="btn btn-sm btn-outline-info">VIEW</button>-->
+                        <a class="btn btn-sm btn-outline-info" href="callto:<?php echo($row['phone']); ?>">RECALL</a>
                     </td>
                 </tr>
+            <?php endwhile; ?>
             </tbody>
         </table>
     </div>

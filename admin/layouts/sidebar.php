@@ -13,6 +13,12 @@
               Contact Messages
             </a>
           </li>
+            <li class="nav-item">
+                <a class="nav-link" href="orders.php">
+                    <span data-feather="file"></span>
+                    Orders
+                </a>
+            </li>
         </ul>
       </div>
     </nav>

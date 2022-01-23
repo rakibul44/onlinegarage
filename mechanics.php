@@ -20,10 +20,18 @@
     <!-- list-card -->
     <div class="container">
         <div class="row">
+
+        <?php
+//        JOIN QUERY MECHANIC WITH USER TABLE
+        $sql = "SELECT * FROM mechanic INNER JOIN users ON users.id = mechanic.user_id;";
+        $result = mysqli_query($conn, $sql);
+        while ($row = mysqli_fetch_array($result)):
+            ?>
+
             <div class="col-md-4">
                 <div class="w3-card-4">
                     <div class="w3-container w3-grey">
-                        <h3>John Doe</h3>
+                        <h3> <?php echo($row['name']); ?> </h3>
                     </div>
                     <div class="w3-container">
                         <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
@@ -31,79 +39,11 @@
                             <span class="badge bg-success"><span>Rating</span> 4.5</span>
                         </div>
                     </div>
-                    <button class="w3-button w3-block w3-green">+ Connect</button>
+                    <a class="w3-button w3-block w3-green" href="placeorder.php?mechanic_id=<?php echo($row['id']); ?>">+ Connect</a>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="w3-card-4">
-                    <div class="w3-container w3-grey">
-                        <h3>John Doe</h3>
-                    </div>
-                    <div class="w3-container">
-                        <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <div class="rate">
-                            <span class="badge bg-success"><span>Rating</span> 4.5</span>
-                        </div>
-                    </div>
-                    <button class="w3-button w3-block w3-green">+ Connect</button>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="w3-card-4">
-                    <div class="w3-container w3-grey">
-                        <h3>John Doe</h3>
-                    </div>
-                    <div class="w3-container">
-                        <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <div class="rate">
-                            <span class="badge bg-success"><span>Rating</span> 4.5</span>
-                        </div>
-                    </div>
-                    <button class="w3-button w3-block w3-green">+ Connect</button>
-                </div>
-            </div>
-            <div class="col-md-4 mt-4">
-                <div class="w3-card-4">
-                    <div class="w3-container w3-grey">
-                        <h3>John Doe</h3>
-                    </div>
-                    <div class="w3-container">
-                        <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <div class="rate">
-                            <span class="badge bg-success"><span>Rating</span> 4.5</span>
-                        </div>
-                    </div>
-                    <button class="w3-button w3-block w3-green">+ Connect</button>
-                </div>
-            </div>
-            <div class="col-md-4 mt-4">
-                <div class="w3-card-4">
-                    <div class="w3-container w3-grey">
-                        <h3>John Doe</h3>
-                    </div>
-                    <div class="w3-container">
-                        <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <div class="rate">
-                            <span class="badge bg-success"><span>Rating</span> 4.5</span>
-                        </div>
-                    </div>
-                    <button class="w3-button w3-block w3-green">+ Connect</button>
-                </div>
-            </div>
-            <div class="col-md-4 mt-4">
-                <div class="w3-card-4">
-                    <div class="w3-container w3-grey">
-                        <h3>John Doe</h3>
-                    </div>
-                    <div class="w3-container">
-                        <img src="assets/images/avatar.jpg" alt="Avatar" class="w3-left w3-circle p-4" style="width: 150px;">
-                        <div class="rate">
-                            <span class="badge bg-success"><span>Rating</span> 4.5</span>
-                        </div>
-                    </div>
-                    <button class="w3-button w3-block w3-green">+ Connect</button>
-                </div>
-            </div>
+
+        <?php endwhile; ?>
         </div>
     </div>
     <?php require_once('layouts/footer.php');?>

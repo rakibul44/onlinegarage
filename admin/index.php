@@ -102,7 +102,12 @@
     <div class="row text-center">
         <div class="col">
           <div class="counter">
-              <h2 class="timer count-title count-number"> 500</h2>
+              <?php
+              $sql = "SELECT * FROM orders";
+              $result = mysqli_query($conn, $sql);
+              $orderCount = mysqli_num_rows($result);
+              ?>
+              <h2 class="timer count-title count-number"><?php echo($orderCount); ?></h2>
               <p class="count-text ">Service Taken</p>
           </div>
         </div>
