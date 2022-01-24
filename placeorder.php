@@ -133,9 +133,9 @@ if(isset($_GET['mechanic_id'])){
                     document.getElementById("latitude").value = position.coords.latitude;
                     document.getElementById("longitude").value = position.coords.latitude;
                     map.innerHTML = `<iframe style="border: 0; width: 100%; height: 400px" loading="lazy" allowfullscreen
-    src="https://maps.google.com/maps?key=AIzaSyBQ_3Ab9HTgR5CUeB6Sgj6TI_JAbikBT14&q=${position.coords.latitude},${position.coords.longitude}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0">
-</iframe>`;
-
+                    src="https://maps.google.com/maps?key=AIzaSyBQ_3Ab9HTgR5CUeB6Sgj6TI_JAbikBT14&q=${position.coords.latitude},${position.coords.longitude}&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0">
+                    </iframe>`;
+                    // map-api
                     fetch(`https://api.opencagedata.com/geocode/v1/json?key=6459f6deae0442dc8f1e101ea197c290&q=${position.coords.latitude}+${position.coords.longitude}&pretty=1&no_annotations=1`)
                         .then(response => response.json())
                         .then(data => {

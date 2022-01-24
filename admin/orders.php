@@ -94,7 +94,6 @@ if(isset($_SESSION['role']) == "admin") {
                                 <td> <?php echo($row['address']); ?> </td>
                                 <td> <?php echo($row['status']); ?> </td>
                                 <td> <?php echo($row['date']); ?> </td>
-
 <!--                                <td>-->
 <!--                                    <button class="btn btn-sm btn-outline-info" style="margin-right: 5px;">VIEW</button>-->
 <!--                                    <button class="btn btn-sm btn-outline-danger">-->

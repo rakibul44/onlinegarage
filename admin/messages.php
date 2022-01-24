@@ -78,6 +78,7 @@
           </thead>
           <tbody>
             <?php
+            // aggregate-function
               $sql = "SELECT * FROM `contact` ORDER BY `date` DESC LIMIT 50";
               $result = mysqli_query($conn, $sql);
               while ($row = mysqli_fetch_array($result)): 

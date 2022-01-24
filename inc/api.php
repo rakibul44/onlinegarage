@@ -30,7 +30,7 @@ if(isset($_POST['create_account'])){
         }else{
             // we have the plain text password now hash it
             $hasedPwd = password_hash($pwd, PASSWORD_DEFAULT);
-            
+             // sub-query
             //now we can insert into the data into the database
             $sql = "INSERT INTO users (name, email, role, password) VALUES ('$name', '$email', 'user', '$hasedPwd');";
             
@@ -104,6 +104,7 @@ if(isset($_POST['create_account'])){
         header('Location: ../contact.php?error=All Fields Are Required');
         exit();
     }else{
+         // sub-query
         $sql = "INSERT INTO `contact` (`name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message')";
         if(mysqli_query($conn, $sql)){
             header('Location: ../contact.php?success=Message Sent');
@@ -125,6 +126,7 @@ if(isset($_POST['create_account'])){
         exit();
     }else{
         $hasedPwd = password_hash($password, PASSWORD_DEFAULT);
+         // sub-query
         $sql = "INSERT INTO `mechanic_requests` (`name`, `phone`, `email`, `borth_date`, `skill`, `password`, `post_code`) VALUES ('$name', '$phone', '$email', '$birth_date', '$skill', '$hasedPwd', '$post_code');";
         if(mysqli_query($conn, $sql)){
             header("Location: ../index.php?success=Form Submitted");
@@ -143,6 +145,7 @@ if(isset($_POST['create_account'])){
         header("Location: ../index.php?mechanics.php?error=All Fields Required");
         exit();
     }else{
+         // sub-query
         $sql = "INSERT INTO `orders` (`user_id`, `mechanic_id`, `c_latitude`, `c_longitude`, `address`, `status`) VALUES ('$user_id', '$mechanic_id', '$latitude', '$longitude', '$location', 'pending')";
         if(mysqli_query($conn, $sql)){
             header("Location: ../profile.php");
