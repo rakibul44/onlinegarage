@@ -10,7 +10,7 @@ if(isset($_POST['create_account'])){
     
     // error handeller start
     
-    //if there any emty fields it will return sign up page again
+    //if there any empty fields it will return sign up page again
     if (empty($name) || empty($email) || empty($pwd)) {
         // here is something empty that's why we are sending user to sign up page again
         header("Location: ../singup.php?error=All Fields Required");
@@ -47,7 +47,7 @@ if(isset($_POST['create_account'])){
 
     //error handeller start here
 
-    //if input data empty retun to the login page again
+    //if input data empty return to the login page again
     if (empty($email) || empty($pwd)) {
         # data is empty that's why sending to login page again
         header("Location: ../login.php?error=All Fields Required");

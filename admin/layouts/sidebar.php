@@ -19,6 +19,11 @@
                     Orders
                 </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mechanics.php">
+              <span data-feather="file"></span>
+                Mechanics</a>
+            </li>
         </ul>
       </div>
     </nav>
